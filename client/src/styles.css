@@ -1,0 +1,72 @@
+body {
+    padding-bottom: 40px;
+    background-image: url('/14547803_rm222batch3-mind-03.svg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #000;
+    /* background-color: #020202; */
+}
+
+/* make sure main container stands out against the background */
+.container { position: relative; z-index: 2 }
+
+/* slightly translucent card backgrounds for readability */
+.container .card {
+    background-color: rgba(255,255,255,0.92);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+/* subtle page-level overlay to dim busy backgrounds (optional) */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* App layout */
+.app-title { font-weight: 600 }
+
+.search-card { margin-bottom: 1rem; }
+.search-card .card-body { padding: 1rem }
+
+.city-card { margin-top: 1rem; }
+.ranking-chips { display: flex; gap: 0.75rem; align-items: stretch; flex-wrap: wrap }
+.activity-chip { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #e6e9ee; background: #fff; min-width: 180px }
+.activity-rank { background:#f1f5f9; border-radius:6px; padding:4px 8px; font-weight:600; color:#374151 }
+.activity-score { margin-left: auto; font-weight:600 }
+
+.daily-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem }
+.day-card { min-height: 160px }
+.day-summary { font-size: 0.9rem; color:#374151; margin-bottom: 0.5rem }
+
+/* Activity progress bars colors */
+.progress.surfing .progress-bar { background: #0d6efd }
+.progress.outdoor .progress-bar { background: #ffc107 }
+.progress.indoor .progress-bar { background: #0dcaf0 }
+.progress.skiing .progress-bar { background: #6c757d }
+
+.best-activity { font-weight:600 }
+.small-score-badge { background:#e7f1ff; color:#0d6efd; padding:4px 8px; border-radius:12px; font-weight:600 }
+
+@media (max-width: 767px) {
+    .daily-grid { grid-template-columns: 1fr }
+}
+
+.list-group{
+    margin-top: -1rem;
+}
+.list-group-item {
+    background-color: #03A9F4;
+    color: white;
+}
+.list-group-item:hover {
+    background-color: #079aea;
+    color: white;
+}
+.city-search{
+    border: 1px solid #03A9F4;
+}
